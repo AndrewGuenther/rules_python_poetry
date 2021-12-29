@@ -4,7 +4,8 @@ def _poetry_impl(ctx):
          "poetry",
          "export"
       ],
-      working_directory = str(ctx.path(ctx.attr.lockfile).dirname)
+      working_directory = str(ctx.path(ctx.attr.lockfile).dirname),
+      quiet = False,
    )
 
    ctx.file("requirements_lock.txt", result.stdout)
