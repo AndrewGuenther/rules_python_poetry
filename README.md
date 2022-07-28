@@ -1,6 +1,6 @@
-# Poetry Bazel Rule PoC
+# Poetry Bazel Rule
 
-This repository provides a proof-of-concept for Poetry integration with Bazel's
+This repository provides a rule for Poetry integration with Bazel's
 own [`rules_python`](https://github.com/bazelbuild/rules_python). It does so
 by calling `poetry export` to generate a requirements file which can then be
 fed into the `pip_install` or `pip_parse` rules.
@@ -13,7 +13,7 @@ fed into the `pip_install` or `pip_parse` rules.
 * `rules_python` 0.5.0 or higher
 * Bazel 3.0 or higher
 
-### Add rules_python_poetry_poc to your WORKSPACE
+### Add rules_python_poetry to your WORKSPACE
 
 ```
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
@@ -28,8 +28,8 @@ http_archive(
 http_archive(
     name = "rules_python_poetry",
     sha256 = "a53ec4bca85abfe5846078d45fef5cbc4396868442c1db1b8039e411bacebd80",
-    strip_prefix = "rules_python_poetry_poc-16d9c1437c384ecaff8263ee42a53fd8e3ad873e",
-    urls = ["https://github.com/AndrewGuenther/rules_python_poetry_poc/archive/16d9c1437c384ecaff8263ee42a53fd8e3ad873e.tar.gz"],
+    strip_prefix = "rules_python_poetry-16d9c1437c384ecaff8263ee42a53fd8e3ad873e",
+    urls = ["https://github.com/AndrewGuenther/rules_python_poetry/archive/16d9c1437c384ecaff8263ee42a53fd8e3ad873e.tar.gz"],
 )
 
 load("@rules_python_poetry//rules_python_poetry:poetry.bzl", "poetry_lock")
