@@ -2,7 +2,7 @@ def _poetry_impl(ctx):
    
    cmd = ["poetry", "export"]
    
-   for group in ctx.attr.with:
+   for group in ctx.attr.groups:
       cmd.append("--with="+group)
    
    result = ctx.execute(
@@ -21,7 +21,7 @@ poetry_lock = repository_rule(
             allow_single_file = True,
             mandatory = True,
         ),
-        "with": attr.string_list(
+        "groups": attr.string_list(
             default = ["dev"],  
         )
    }
