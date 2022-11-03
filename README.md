@@ -27,8 +27,8 @@ http_archive(
 # Rules for Poetry
 http_archive(
     name = "rules_python_poetry",
-    sha256 = "c91da5e69051611abad2c9d790be92c2877467c9446fe9e68b7a5bbd2f71584f",
-    strip_prefix = "rules_python_poetry-d499834fb525ce1fa5d4f6ba2f78479f64986f9d",
+    sha256 = "35c51c970f6362ecc6d1050af691c1463eb91471f389bfde4e114d3c2b4815c6",
+    strip_prefix = "rules_python_poetry-cb9a0e5dd7496b59201ee522140dcd7dc12e5f97",
     urls = ["https://github.com/AndrewGuenther/rules_python_poetry/archive/cb9a0e5dd7496b59201ee522140dcd7dc12e5f97.tar.gz"],
 )
 
