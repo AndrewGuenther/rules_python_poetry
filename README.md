@@ -19,17 +19,17 @@ fed into the `pip_install` or `pip_parse` rules.
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
     name = "rules_python",
-    sha256 = "9fcf91dbcc31fde6d1edb15f117246d912c33c36f44cf681976bd886538deba6",
-    strip_prefix = "rules_python-0.8.0",
-    url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.8.0.tar.gz",
+    sha256 = "8c8fe44ef0a9afc256d1e75ad5f448bb59b81aba149b8958f02f7b3a98f5d9b4",
+    strip_prefix = "rules_python-0.13.0",
+    url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.13.0.tar.gz",
 )
 
 # Rules for Poetry
 http_archive(
     name = "rules_python_poetry",
-    sha256 = "08e20c27752eee16864c22951eae4a401169a01f3199c2e76db2eb5cfd5b4489",
-    strip_prefix = "rules_python_poetry-2111f12e5b6227c4b1fa257f7a04fba07c1a5997",
-    urls = ["https://github.com/AndrewGuenther/rules_python_poetry/archive/2111f12e5b6227c4b1fa257f7a04fba07c1a5997.tar.gz"],
+    sha256 = "c91da5e69051611abad2c9d790be92c2877467c9446fe9e68b7a5bbd2f71584f",
+    strip_prefix = "rules_python_poetry-d499834fb525ce1fa5d4f6ba2f78479f64986f9d",
+    urls = ["https://github.com/AndrewGuenther/rules_python_poetry/archive/cb9a0e5dd7496b59201ee522140dcd7dc12e5f97.tar.gz"],
 )
 
 load("@rules_python_poetry//rules_python_poetry:poetry.bzl", "poetry_lock")
