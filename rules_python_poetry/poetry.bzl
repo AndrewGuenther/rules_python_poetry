@@ -1,16 +1,13 @@
 def _poetry_impl(ctx):
+   
+   cmd = ["poetry", "export"]
+   
+   for group in ctx.attr.groups:
+      cmd.append("--with="+group)
+   
    result = ctx.execute(
-      [
-         "poetry",
-         "export",
-         # We also export dev here since no actual distinction for this exists
-         # in rules_python. Also, the "dev" category in the lockfile is an
-         # apparently meaningless distinction...
-         # https://github.com/python-poetry/poetry/issues/5702
-         "--dev"
-      ],
+      cmd,
       working_directory = str(ctx.path(ctx.attr.lockfile).dirname),
-      quiet = False,
    )
 
    ctx.file("requirements_lock.txt", result.stdout)
@@ -24,5 +21,8 @@ poetry_lock = repository_rule(
             allow_single_file = True,
             mandatory = True,
         ),
+        "groups": attr.string_list(
+            default = ["dev"],  
+        )
    }
 )
