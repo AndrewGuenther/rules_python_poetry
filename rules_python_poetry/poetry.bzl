@@ -10,6 +10,10 @@ def _poetry_impl(ctx):
       working_directory = str(ctx.path(ctx.attr.lockfile).dirname),
    )
 
+   if result.return_code != 0:
+      fail("Failed to execute poetry. Error: ", result.stderr)
+
+
    ctx.file("requirements_lock.txt", result.stdout)
    ctx.file("BUILD", "")
 
