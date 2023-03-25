@@ -27,9 +27,9 @@ http_archive(
 # Rules for Poetry
 http_archive(
     name = "rules_python_poetry",
-    sha256 = "35c51c970f6362ecc6d1050af691c1463eb91471f389bfde4e114d3c2b4815c6",
-    strip_prefix = "rules_python_poetry-cb9a0e5dd7496b59201ee522140dcd7dc12e5f97",
-    urls = ["https://github.com/AndrewGuenther/rules_python_poetry/archive/cb9a0e5dd7496b59201ee522140dcd7dc12e5f97.tar.gz"],
+    sha256 = "d6d1d09ffcfcec5eccd4c91d6cb85bfc3c2014f97ad9dc51843c0fe70575bcf8",
+    strip_prefix = "rules_python_poetry-1fc695ec467e01e1be11e8feb1b6b7fda614ecb7",
+    urls = ["https://github.com/AndrewGuenther/rules_python_poetry/archive/1fc695ec467e01e1be11e8feb1b6b7fda614ecb7.tar.gz"],
 )
 
 load("@rules_python_poetry//rules_python_poetry:poetry.bzl", "poetry_lock")
