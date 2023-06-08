@@ -15,7 +15,7 @@ fed into the `pip_install` or `pip_parse` rules.
 
 ### Add rules_python_poetry to your WORKSPACE
 
-```
+```starlark
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
     name = "rules_python",
