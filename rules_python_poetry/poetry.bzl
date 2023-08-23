@@ -1,10 +1,13 @@
 def _poetry_impl(ctx):
-   
-   cmd = ["poetry", "export"]
-   
+
+   if ctx.attr.poetry != None:
+      cmd = [ctx.path(ctx.attr.poetry), "export"]
+   else:
+      cmd = ["poetry", "export"]
+
    for group in ctx.attr.groups:
       cmd.append("--with="+group)
-   
+
    result = ctx.execute(
       cmd,
       working_directory = str(ctx.path(ctx.attr.lockfile).dirname),
@@ -26,7 +29,13 @@ poetry_lock = repository_rule(
             mandatory = True,
         ),
         "groups": attr.string_list(
-            default = ["dev"],  
-        )
+            default = ["dev"],
+        ),
+        "poetry": attr.label(
+            allow_single_file = True,
+            mandatory = False,
+            executable = True,
+            cfg = "exec"
+        ),
    }
 )
