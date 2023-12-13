@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "035a333e10a4fb8fcc5d2c0785c2b83961c7cbe368e8680c2c4f87d9cc205811",
+  "moduleFileHash": "1e5409102b8bfbd5e91d1e6b61dd32360d567376ab44b3c5e260c1fd254d3485",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -18,7 +18,7 @@
   "moduleDepGraph": {
     "<root>": {
       "name": "rules_python_poetry",
-      "version": "",
+      "version": "0.1",
       "key": "<root>",
       "repoName": "rules_python_poetry",
       "executionPlatformsToRegister": [],
